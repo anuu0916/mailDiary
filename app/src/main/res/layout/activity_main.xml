@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity"
+    android:background="@drawable/main_background">
+
+    <!--   달력   -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="8"
+        android:paddingLeft="24dp"
+        android:paddingRight="24dp"
+        android:weightSum="10"
+        android:orientation="vertical" >
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:paddingLeft="24dp">
+            <TextView
+                android:id="@+id/main_calendar_year"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2019"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="#ffffff" />
+            <TextView
+                android:id="@+id/main_calendar_month"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="10월"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="#ffffff" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="7"
+            android:padding="24dp"
+            android:background="@drawable/round_corner">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="12dp">
+                <com.github.sundeepk.compactcalendarview.CompactCalendarView
+                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/calendar_view"
+                    android:layout_width="fill_parent"
+                    android:paddingRight="10dp"
+                    android:paddingLeft="10dp"
+                    android:layout_height="fill_parent"
+                    app:compactCalendarTextSize="15sp"
+                    app:compactCalendarBackgroundColor="#FFFFFF"
+                    app:compactCalendarTextColor="#000000"
+                    app:compactCalendarCurrentSelectedDayBackgroundColor="@color/mainBlueColor"
+                    app:compactCalendarCurrentDayBackgroundColor="#00FFFFFF"
+                    app:compactCalendarMultiEventIndicatorColor="#fff"
+                    />
+            </LinearLayout>
+
+
+<!--
+targetheight == 사이 간격
+CurrentSelectedDayBackgroundColor == 선택한 동그라미 배경 색
+CurrentDayBackgroundColor == 현재 날짜 동그라미
+-->
+        </LinearLayout>
+    </LinearLayout>
+    <!--   버튼   -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:paddingTop="48dp"
+        android:paddingBottom="24dp"
+        android:paddingEnd="24dp"
+        android:paddingStart="24dp"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/main_mailbox_btn"
+            android:layout_width="21.6dp"
+            android:layout_height="16.2dp"
+            android:background="@drawable/emo_diary_menu_write_letter_btn"/>
+
+        <Button
+            android:id="@+id/main_write_mail_btn"
+            android:layout_width="21.6dp"
+            android:layout_height="21.6dp"
+            android:layout_marginLeft="72dp"
+            android:background="@drawable/emo_diary_menu_read_letter_btn"/>
+
+        <Button
+            android:id="@+id/main_write_diary_btn"
+            android:layout_width="21.6dp"
+            android:layout_height="21.6dp"
+            android:layout_marginLeft="72dp"
+            android:background="@drawable/emo_diary_menu_write_diary_btn"/>
+
+        <Button
+            android:id="@+id/main_collect_btn"
+            android:layout_width="21.6dp"
+            android:layout_height="16.8dp"
+            android:layout_marginLeft="72dp"
+            android:background="@drawable/emo_diary_menu_read_diary_btn"/>
+
+
+    </LinearLayout>
+
+</LinearLayout>
